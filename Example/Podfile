@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'SUILayout_Example' do
+  pod 'SUILayout', :path => '../'
+
+  target 'SUILayout_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
