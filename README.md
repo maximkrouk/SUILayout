@@ -1,15 +1,31 @@
 # SUILayout
 
-[![CI Status](https://img.shields.io/travis/mx-Cat/SUILayout.svg?style=flat)](https://travis-ci.org/mx-Cat/SUILayout)
-[![Version](https://img.shields.io/cocoapods/v/SUILayout.svg?style=flat)](https://cocoapods.org/pods/SUILayout)
-[![License](https://img.shields.io/cocoapods/l/SUILayout.svg?style=flat)](https://cocoapods.org/pods/SUILayout)
-[![Platform](https://img.shields.io/cocoapods/p/SUILayout.svg?style=flat)](https://cocoapods.org/pods/SUILayout)
+##Why?
 
-## Example
+Sometimes it's pretty annoying to type something like `.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)` , so I decided to extract common cases to this tiny framework.
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+## Usage
+
+```swift
+var body: some View {
+Text("Awesome SwiftUI Layout")
+.make.equalToScreen()
+}
+```
+
+Avalible cases:
+
+- `make.equalToScreen()`
+- `make.equalToSuperview()`
+- `make.square(length: Length)`
+
+New capabilities will come soon 😉
 
 ## Requirements
+
+* 🖥	OSX 10.15+
+
+* 📱	iOS 13.0+
 
 ## Installation
 
@@ -19,11 +35,4 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'SUILayout'
 ```
-
-## Author
-
-mx-Cat, maximkrouk@gmail.com
-
-## License
-
-SUILayout is available under the MIT license. See the LICENSE file for more info.
+and run `pod install` from the terminal
