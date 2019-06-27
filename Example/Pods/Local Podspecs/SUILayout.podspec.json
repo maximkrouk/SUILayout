@@ -1,0 +1,22 @@
+{
+  "name": "SUILayout",
+  "version": "0.1.0",
+  "summary": "A short description of SUILayout.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/mx-Cat/SUILayout",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "mx-Cat": "maximkrouk@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/mx-Cat/SUILayout.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "SUILayout/Classes/**/*"
+}
