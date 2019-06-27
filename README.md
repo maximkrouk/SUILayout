@@ -1,7 +1,5 @@
 # SUILayout
 
-##Why?
-
 Sometimes it's pretty annoying to type something like `.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)` , so I decided to extract common cases to this tiny framework.
 
 ## Usage
