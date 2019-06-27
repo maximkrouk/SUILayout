@@ -17,7 +17,7 @@ Avalible cases:
 - `make.equalToSuperview()`
 - `make.square(length: Length)`
 
-New capabilities will come soon 😉
+New capabilities will come soon 😉.
 
 ## Requirements
 
@@ -33,4 +33,4 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'SUILayout'
 ```
-and run `pod install` from the terminal
+and run `pod install` from the terminal.
