@@ -19,18 +19,15 @@ public struct SUIMake<V: View>: View {
     
     public init(_ content: V) { self.content = content }
     
-    @discardableResult
-    func equalToSuperview() -> SUIMake<V.Modified<_FlexFrameLayout>> {
+    public func equalToSuperview() -> SUIMake<V.Modified<_FlexFrameLayout>> {
         SUIMake<V.Modified<_FlexFrameLayout>>(content.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity))
     }
     
-    @discardableResult
-    func equalToScreen() -> SUIMake<V.Modified<_FrameLayout>> {
+    public func equalToScreen() -> SUIMake<V.Modified<_FrameLayout>> {
         SUIMake<V.Modified<_FrameLayout>>(content.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
     }
     
-    @discardableResult
-    func square(length: Length) -> SUIMake<V.Modified<_FrameLayout>> {
+    public func square(length: Length) -> SUIMake<V.Modified<_FrameLayout>> {
         SUIMake<V.Modified<_FrameLayout>>(content.frame(width: length, height: length))
     }
     

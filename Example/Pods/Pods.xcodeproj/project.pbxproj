@@ -17,6 +17,8 @@
 		AFE96B4B34090DCCFEA5BBB9367A6E63 /* Pods-SUILayout_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5001D4709E84A4ABD53C02274BE6D996 /* Pods-SUILayout_Example-dummy.m */; };
 		B3DB89C08ADC00428B5FF0D48D066393 /* Pods-SUILayout_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 05488D438B9E03038FCD91D9AC54B785 /* Pods-SUILayout_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C6EE9DD7D0F0B3FC11B1441678D49B83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		D7F65B5122C51D850069DAAE /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7F65B5022C51D840069DAAE /* SwiftUI.framework */; };
+		D7F65B5222C51D850069DAAE /* SwiftUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D7F65B5022C51D840069DAAE /* SwiftUI.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,20 @@
 			remoteInfo = "Pods-SUILayout_Example";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D7F65B5322C51D850069DAAE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D7F65B5222C51D850069DAAE /* SwiftUI.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		022F7FA52870EFB61F0E82F31A62AE46 /* Pods_SUILayout_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SUILayout_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +77,7 @@
 		B971E0A0BCD24D1965ADD6A40C1AE22C /* Pods-SUILayout_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SUILayout_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		BD18837CA6267D7DFBE10D7010D905DF /* Pods-SUILayout_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SUILayout_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		C812B6C2B958433C54AC51EAB4CC2905 /* Pods-SUILayout_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SUILayout_Example.modulemap"; sourceTree = "<group>"; };
+		D7F65B5022C51D840069DAAE /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.0.sdk/System/Library/Frameworks/SwiftUI.framework; sourceTree = DEVELOPER_DIR; };
 		E1B82C2FE3109EECC465B17866DAEC08 /* Pods-SUILayout_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SUILayout_Example-Info.plist"; sourceTree = "<group>"; };
 		E9765B9C5168E720F869FD843A176BB8 /* SUILayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SUILayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB1F95D2A43A35F00E5A4514D92385F1 /* Pods-SUILayout_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SUILayout_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -76,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7F65B5122C51D850069DAAE /* SwiftUI.framework in Frameworks */,
 				C6EE9DD7D0F0B3FC11B1441678D49B83 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,6 +212,7 @@
 		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D7F65B5022C51D840069DAAE /* SwiftUI.framework */,
 				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
 			);
 			name = Frameworks;
@@ -297,6 +316,7 @@
 				3C27EEE5F9FFD4096FD1AA3D32CFB299 /* Sources */,
 				461BD89F91110937773BB0738BDB85F0 /* Frameworks */,
 				69D9FDA1CA0F2F925DF26EF749EF4E5F /* Resources */,
+				D7F65B5322C51D850069DAAE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -419,7 +439,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-SUILayout_Example/Pods-SUILayout_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-SUILayout_Example/Pods-SUILayout_Example.modulemap";
@@ -452,7 +472,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-SUILayout_Tests/Pods-SUILayout_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-SUILayout_Tests/Pods-SUILayout_Tests.modulemap";
@@ -485,7 +505,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SUILayout/SUILayout-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SUILayout/SUILayout-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SUILayout/SUILayout.modulemap";
 				PRODUCT_MODULE_NAME = SUILayout;
@@ -516,7 +536,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SUILayout/SUILayout-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SUILayout/SUILayout-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SUILayout/SUILayout.modulemap";
 				PRODUCT_MODULE_NAME = SUILayout;
@@ -548,7 +568,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-SUILayout_Tests/Pods-SUILayout_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-SUILayout_Tests/Pods-SUILayout_Tests.modulemap";
@@ -641,7 +661,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-SUILayout_Example/Pods-SUILayout_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-SUILayout_Example/Pods-SUILayout_Example.modulemap";
