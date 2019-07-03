@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5CB863443AE176B7BA543CC7 /* Pods_SUILayout_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E69E892C4C6E6E0C5A6D2C2 /* Pods_SUILayout_Example.framework */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		6948DBEE1400CD8DA20B512A /* Pods_SUILayout_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B1BEE91C296CCC0F9CFEA6 /* Pods_SUILayout_Tests.framework */; };
+		D7BF3FD022CCB0BF00372821 /* Pods_SUILayout_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7BF3FCA22CCAFD800372821 /* Pods_SUILayout_Example.framework */; };
 		D7F65B5522C51E2F0069DAAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F65B5422C51E2F0069DAAE /* AppDelegate.swift */; };
 		D7F65B5722C51E400069DAAE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F65B5622C51E400069DAAE /* SceneDelegate.swift */; };
 		D7F65B5B22C51E970069DAAE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F65B5A22C51E970069DAAE /* ContentView.swift */; };
@@ -42,6 +42,8 @@
 		86B1BEE91C296CCC0F9CFEA6 /* Pods_SUILayout_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SUILayout_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		961BB4FFA67740E8D3BEE50D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		A4BE1209608508A8E331F7FF /* SUILayout.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SUILayout.podspec; path = ../SUILayout.podspec; sourceTree = "<group>"; };
+		D7BF3FC622CCAFAD00372821 /* SUILayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SUILayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7BF3FCA22CCAFD800372821 /* Pods_SUILayout_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_SUILayout_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7F65B5422C51E2F0069DAAE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7F65B5622C51E400069DAAE /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D7F65B5A22C51E970069DAAE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,7 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CB863443AE176B7BA543CC7 /* Pods_SUILayout_Example.framework in Frameworks */,
+				D7BF3FD022CCB0BF00372821 /* Pods_SUILayout_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +155,8 @@
 		6C0A101C27F5818FDA1990DD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D7BF3FCA22CCAFD800372821 /* Pods_SUILayout_Example.framework */,
+				D7BF3FC622CCAFAD00372821 /* SUILayout.framework */,
 				4E69E892C4C6E6E0C5A6D2C2 /* Pods_SUILayout_Example.framework */,
 				86B1BEE91C296CCC0F9CFEA6 /* Pods_SUILayout_Tests.framework */,
 			);

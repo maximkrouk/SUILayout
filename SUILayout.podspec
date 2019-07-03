@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SUILayout'
-  s.version          = '1.1.0'
+  s.version          = '2.0.0'
   s.summary          = 'Modern SwiftUI layout DSL'
   s.description      = <<-DESC
 Modern SwiftUI layout DSL, inspired by SnapKit.

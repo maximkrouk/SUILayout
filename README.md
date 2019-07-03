@@ -6,16 +6,22 @@ Sometimes it's pretty annoying to type something like `.frame(minWidth: 0, maxWi
 
 ```swift
 var body: some View {
-Text("Awesome SwiftUI Layout")
-.make.equalToScreen()
+	Text("Awesome SwiftUI Layout")
+		.pin.toScreen()
 }
 ```
 
-Avalible cases:
+__Pins:__
 
-- `make.equalToScreen()`
-- `make.equalToSuperview()`
-- `make.square(length: Length)`
+- `toScreen(multipliedBy multiplier: CGSize)`
+- `toScreen(insetBy inset: CGPoint = .zero)`
+- `sizeToScreen(multipliedBy multiplier: CGSize)`
+- `sizeToScreen(insetBy inset: CGPoint = .zero)`
+- `widthToScreen(multipliedBy multiplier: CGFloat)`
+- `widthToScreen(insetBy inset: CGFloat = 0)`
+- `heightToScreen(multipliedBy multiplier: CGFloat)`
+- `heightToScreen(insetBy inset: CGFloat = 0)`
+- `sizeToSquare(length: Length)`
 
 New capabilities will come soon 😉.
 

@@ -1,5 +1,5 @@
 PODS:
-  - SUILayout (0.1.0)
+  - SUILayout (1.1.0)
 
 DEPENDENCIES:
   - SUILayout (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  SUILayout: fac990003b1d72d709917ae21fadea5aa670e3fb
+  SUILayout: 55438eedb7105cbd3e9a2bedb76189122d617423
 
 PODFILE CHECKSUM: 6d6be5c164d02aad8362ea7793722ea389681969
 
