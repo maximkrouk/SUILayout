@@ -12,6 +12,7 @@ Pod::Spec.new do |s|
   s.summary          = 'Modern SwiftUI layout DSL'
   s.description      = <<-DESC
 Modern SwiftUI layout DSL, inspired by SnapKit.
+Keywords: SwiftUI, Layout, Sizing, Sizes, Autoresizing, SnapKit, Swift, Alignment
                        DESC
 
   s.homepage         = 'https://github.com/mx-Cat/SUILayout'
