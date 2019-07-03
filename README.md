@@ -1,4 +1,6 @@
-# SUILayout
+# SUILayout 🍃
+
+__Lightweight sizing dsl for SwiftUI__
 
 Sometimes it's pretty annoying to type something like `.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)` , so I decided to extract common cases to this tiny framework.
 
@@ -31,8 +33,8 @@ New capabilities will come soon 😉.
 
 ## Requirements
 
+* ⌨️	XCode 11.0 Beta+
 * 🖥	OSX 10.15+
-
 * 📱	iOS 13.0+
 
 ## Installation
@@ -44,3 +46,7 @@ it, simply add the following line to your Podfile:
 pod 'SUILayout'
 ```
 and run `pod install` from the terminal.
+
+---
+
+*Feel free to contribute or [communicate](https://twitter.com/mxcat_).*
