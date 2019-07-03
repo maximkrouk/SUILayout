@@ -84,10 +84,44 @@ public struct Pin<Content: View> {
     /// The same as
     ///
     /// `frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)`
+    ///
+    /// Ignores safeAreaInsets
     public func toSuperview() -> some View {
+        sizeToSuperview().edgesIgnoringSafeArea(.all)
+    }
+    
+    /// Pins size to superview
+    ///
+    /// The same as
+    ///
+    /// `frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)`
+    ///
+    /// Doesn't ignore safeAreaInsets
+    public func sizeToSuperview() -> some View {
         content.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
     }
     
+    /// Pins size to superview
+    ///
+    /// The same as
+    ///
+    /// `frame(minWidth: 0, maxWidth: .infinity)`
+    public func widthToSuperview() -> some View {
+        content.frame(minWidth: 0, maxWidth: .infinity)
+    }
+    
+    /// Pins size to superview
+    ///
+    /// The same as
+    ///
+    /// `frame(minHeight: 0, maxHeight: .infinity)`
+    public func heightToSuperview() -> some View {
+        content.frame(minHeight: 0, maxHeight: .infinity)
+    }
+    
+    /// Sets frame to fixed square size
+    ///
+    /// - Parameter length: specifies insets for screen dimensions
     public func sizeToSquare(length: Length) -> some View {
         content.frame(width: length, height: length)
     }

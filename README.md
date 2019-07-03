@@ -6,8 +6,8 @@ Sometimes it's pretty annoying to type something like `.frame(minWidth: 0, maxWi
 
 ```swift
 var body: some View {
-	Text("Awesome SwiftUI Layout")
-		.pin.toScreen()
+    Text("Awesome SwiftUI")
+        .pin.toScreen()
 }
 ```
 
@@ -21,6 +21,10 @@ __Pins:__
 - `widthToScreen(insetBy inset: CGFloat = 0)`
 - `heightToScreen(multipliedBy multiplier: CGFloat)`
 - `heightToScreen(insetBy inset: CGFloat = 0)`
+- `toSuperview()`
+- `sizeToSuperview()`
+- `widthToSuperview()`
+- `heightToSuperview()`
 - `sizeToSquare(length: Length)`
 
 New capabilities will come soon 😉.
