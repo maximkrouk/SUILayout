@@ -9,7 +9,9 @@ Sometimes it's pretty annoying to type something like `.frame(minWidth: 0, maxWi
 ```swift
 var body: some View {
     Text("Awesome SwiftUI")
-        .pin.toScreen()
+        .pin.toLeft()
+        .pin.toSuperview()
+  	
 }
 ```
 
@@ -24,10 +26,15 @@ __Pins:__
 - `heightToScreen(multipliedBy multiplier: CGFloat)`
 - `heightToScreen(insetBy inset: CGFloat = 0)`
 - `toSuperview()`
+- `toSuperview(background shape: ShapeStyle, cornerRadius: Length = 0)`
 - `sizeToSuperview()`
 - `widthToSuperview()`
 - `heightToSuperview()`
 - `sizeToSquare(length: Length)`
+- `toTop()`
+- `toBottom()`
+- `toLeft()`
+- `toRight()`
 
 New capabilities will come soon 😉.
 
