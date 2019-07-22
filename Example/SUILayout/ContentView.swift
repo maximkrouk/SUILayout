@@ -12,9 +12,10 @@ import SUILayout
 struct ContentView : View {
     var body: some View {
         Text("Awesome SwiftUI layout.")
-            .color(.init(white: 0.5))
-            .pin.toScreen()
-            .background(Color(white: 0.1))
+            .foregroundColor(.init(white: 0.5))
+            .pin.toRight()
+            .pin.toBottom()
+            .pin.toSuperview(background: Color(white: 0.1))
     }
 }
 
