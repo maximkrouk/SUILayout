@@ -126,4 +126,44 @@ public struct Pin<Content: View> {
         content.frame(width: length, height: length)
     }
     
+    /// Aligns view to right.
+    ///
+    /// Aligns view to right, by embedding it in an HStack with a spacer.
+    public func toRight() -> some View {
+        HStack {
+            Spacer()
+            content
+        }
+    }
+    
+    /// Aligns view to left.
+    ///
+    /// Aligns view to left, by embedding it in an HStack with a spacer.
+    public func toLeft() -> some View {
+        HStack {
+            content
+            Spacer()
+        }
+    }
+    
+    /// Aligns view to top.
+    ///
+    /// Aligns view to top, by embedding it in a VStack with a spacer.
+    public func toTop() -> some View {
+        VStack {
+            content
+            Spacer()
+        }
+    }
+    
+    /// Aligns view to bottom.
+    ///
+    /// Aligns view to bottom, by embedding it in a VStack with a spacer.
+    public func toBottom() -> some View {
+        VStack {
+            Spacer()
+            content
+        }
+    }
+    
 }
