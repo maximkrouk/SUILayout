@@ -15,8 +15,7 @@ struct ContentView : View {
             .foregroundColor(.init(white: 0.5))
             .pin.toRight()
             .pin.toBottom()
-            .pin.toScreen()
-            .background(Color(white: 0.1))
+            .pin.toSuperview(background: Color(white: 0.1))
     }
 }
 
