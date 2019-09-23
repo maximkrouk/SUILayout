@@ -93,9 +93,9 @@ public struct Pin<Content: View> {
     /// Pins size to superview and sets the background.
     ///
     /// Ignores safeAreaInsets
-    public func toSuperview<T: ShapeStyle>(background shape: T, cornerRadius: Length = 0) -> some View {
+    public func toSuperview<T: View>(background view: T) -> some View {
         sizeToSuperview()
-            .background(shape, cornerRadius: cornerRadius)
+            .background(view)
             .edgesIgnoringSafeArea(.all)
     }
     
@@ -131,7 +131,7 @@ public struct Pin<Content: View> {
     /// Sets frame to fixed square size
     ///
     /// - Parameter length: specifies insets for screen dimensions
-    public func sizeToSquare(length: Length) -> some View {
+    public func sizeToSquare(length: CGFloat) -> some View {
         content.frame(width: length, height: length)
     }
     

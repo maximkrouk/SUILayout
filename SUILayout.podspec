@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SUILayout'
-  s.version          = '2.0.2'
+  s.version          = '2.0.3'
   s.summary          = 'Modern SwiftUI layout DSL'
   s.description      = <<-DESC
 Modern SwiftUI layout DSL, inspired by SnapKit.
@@ -18,8 +18,8 @@ Keywords: SwiftUI, Layout, Sizing, Sizes, Autoresizing, SnapKit, Swift, Alignmen
   s.homepage         = 'https://github.com/mx-Cat/SUILayout'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'mx-Cat' => 'id.maximkrouk@gmail.com' }
-  s.source           = { :git => 'https://github.com/mx-Cat/SUILayout.git', :tag => s.version.to_s }
-  s.social_media_url = 'https://twitter.com/mxcat_'
+  s.source           = { :git => 'https://github.com/maximkrouk/SUILayout.git', :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/maximkrouk'
 
   s.ios.deployment_target = '13.0'
   s.source_files = 'SUILayout/Classes/**/*'
