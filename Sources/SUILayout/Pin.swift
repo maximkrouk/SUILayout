@@ -8,12 +8,14 @@
 
 import SwiftUI
 
-
 public extension View {
+    
     var pin: Pin<Self> { Pin(self) }
+    
 }
 
 public struct Pin<Content: View> {
+    
     /// Screen bounds
     #if os(iOS)
     private var screen = UIScreen.main.bounds
@@ -22,64 +24,64 @@ public struct Pin<Content: View> {
     #endif
     
     private var content: Content
-    public init(_ view: Content) { content = view }
+    internal init(_ view: Content) { content = view }
     
-    /// Pins size to UIScreen.main.bounds.size
+    /// Pins size to screen size
     ///
     /// Ignores safeAreaInsets
-    /// - Parameter multipliedBy: specifies multipliers for screen dimensions
-    public func toScreen(multipliedBy multiplier: CGSize) -> some View {
-        sizeToScreen(multipliedBy: multiplier).edgesIgnoringSafeArea(.all)
+    /// - Parameter multipliers: Specifies multipliers for screen dimensions.
+    public func toScreen(multipliedBy multipliers: CGPoint) -> some View {
+        sizeToScreen(multipliedBy: multipliers).edgesIgnoringSafeArea(.all)
     }
     
-    /// Pins size to UIScreen.main.bounds.size
+    /// Pins size to screen size
     ///
     /// Ignores safeAreaInsets
-    /// - Parameter insetBy: specifies insets for screen dimensions
-    public func toScreen(insetBy inset: CGPoint = .zero) -> some View {
-        sizeToScreen(insetBy: inset).edgesIgnoringSafeArea(.all)
+    /// - Parameter insets: Specifies insets for screen dimensions.
+    public func toScreen(insetBy insets: CGPoint = .zero) -> some View {
+        sizeToScreen(insetBy: insets).edgesIgnoringSafeArea(.all)
     }
     
-    /// Pins size to UIScreen.main.bounds.size
+    /// Pins size to screen size
     ///
     /// Doesn't ignore safeAreaInsets
-    /// - Parameter multipliedBy: specifies multipliers for screen dimensions
-    public func sizeToScreen(multipliedBy multiplier: CGSize) -> some View {
-        content.frame(width: screen.width * multiplier.width, height: screen.height * multiplier.height)
+    /// - Parameter multipliers: Specifies multipliers for screen dimensions.
+    public func sizeToScreen(multipliedBy multipliers: CGPoint) -> some View {
+        content.frame(width: screen.width * multipliers.x, height: screen.height * multipliers.y)
     }
     
-    /// Pins size to UIScreen.main.bounds.size
+    /// Pins size to screen size
     ///
     /// Doesn't ignore safeAreaInsets
-    /// - Parameter insetBy: specifies insets for screen dimensions
-    public func sizeToScreen(insetBy inset: CGPoint = .zero) -> some View {
-        content.frame(width: screen.width - inset.x, height: screen.height - inset.y)
+    /// - Parameter insets: Specifies insets for screen dimensions.
+    public func sizeToScreen(insetBy insets: CGPoint = .zero) -> some View {
+        content.frame(width: screen.width - insets.x, height: screen.height - insets.y)
     }
     
-    /// Pins size to UIScreen.main.bounds.size
+    /// Pins width to screen width
     ///
-    /// - Parameter multipliedBy: specifies insets for screen dimensions
+    /// - Parameter multiplier: Specifies the multiplier for screen width.
     public func widthToScreen(multipliedBy multiplier: CGFloat) -> some View {
         content.frame(width: screen.width * multiplier)
     }
     
-    /// Pins size to UIScreen.main.bounds.size
+    /// Pins width to screen width
     ///
-    /// - Parameter insetBy: specifies insets for screen dimensions
+    /// - Parameter inset: Specifies the inset for screen width.
     public func widthToScreen(insetBy inset: CGFloat = 0) -> some View {
         content.frame(width: screen.width - inset)
     }
     
-    /// Pins size to UIScreen.main.bounds.size
+    /// Pins height to screen height
     ///
-    /// - Parameter multipliedBy: specifies insets for screen dimensions
+    /// - Parameter multiplier: Specifies the multiplier for screen height.
     public func heightToScreen(multipliedBy multiplier: CGFloat) -> some View {
         content.frame(height: screen.height * multiplier)
     }
     
-    /// Pins size to UIScreen.main.bounds.size
+    /// Pins size to screen height
     ///
-    /// - Parameter insetBy: specifies insets for screen dimensions
+    /// - Parameter inset: Specifies the inset for screen height.
     public func heightToScreen(insetBy inset: CGFloat = 0) -> some View {
         content.frame(height: screen.height - inset)
     }
@@ -90,18 +92,29 @@ public struct Pin<Content: View> {
     ///
     /// `frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)`
     ///
-    /// Ignores safeAreaInsets
+    /// Ignores safeAreaInsets.
     public func toSuperview() -> some View {
         sizeToSuperview().edgesIgnoringSafeArea(.all)
     }
     
-    /// Pins size to superview and sets the background.
+    /// Pins size to adjustment superview's size
     ///
-    /// Ignores safeAreaInsets
-    public func toSuperview<T: View>(background view: T) -> some View {
-        sizeToSuperview()
-            .background(view)
-            .edgesIgnoringSafeArea(.all)
+    /// - Parameter multipliers: Specifies multipliers for superview dimensions.
+    public func sizeToSuperview(multipliedBy multipliers: CGPoint) -> some View {
+        GeometryReader { proxy in
+            self.size(to: {
+                let size = proxy.frame(in: .local).size
+                return .init(width: size.width * multipliers.x,
+                             height: size.height * multipliers.y)
+            }())
+        }
+    }
+    
+    /// Sets frame to fixed size
+    ///
+    /// - Parameter size: Specifies a new size.
+    public func size(to size: CGSize) -> some View {
+        content.frame(width: size.width, height: size.height)
     }
     
     /// Pins size to superview
@@ -110,18 +123,36 @@ public struct Pin<Content: View> {
     ///
     /// `frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)`
     ///
-    /// Doesn't ignore safeAreaInsets
+    /// Doesn't ignore safeAreaInsets.
     public func sizeToSuperview() -> some View {
         content.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
     }
     
-    /// Pins size to superview
+    /// Pins width to superview's width
     ///
     /// The same as
     ///
     /// `frame(minWidth: 0, maxWidth: .infinity)`
     public func widthToSuperview() -> some View {
         content.frame(minWidth: 0, maxWidth: .infinity)
+    }
+    
+    /// Pins width to superview's width
+    ///
+    /// - Parameter multiplier: Specifies multipliers for screen width.
+    public func widthToSuperview(multipliedBy multiplier: CGFloat) -> some View {
+        GeometryReader { proxy in
+            self.content.frame(width: proxy.frame(in: .local).size.width * multiplier)
+        }
+    }
+    
+    /// Pins width to superview's width
+    ///
+    /// - Parameter inset: Specifies the inset for screen width.
+    public func widthToSuperview(insetBy inset: CGFloat) -> some View {
+        GeometryReader { proxy in
+            self.content.frame(width: proxy.frame(in: .local).size.width - inset)
+        }
     }
     
     /// Pins size to superview
@@ -133,11 +164,22 @@ public struct Pin<Content: View> {
         content.frame(minHeight: 0, maxHeight: .infinity)
     }
     
-    /// Sets frame to fixed square size
+    /// Pins heigth to superview's height
     ///
-    /// - Parameter length: specifies insets for screen dimensions
-    public func sizeToSquare(length: CGFloat) -> some View {
-        content.frame(width: length, height: length)
+    /// - Parameter multiplier: Specifies the multiplier for screen height.
+    public func heightToSuperview(multipliedBy multiplier: CGFloat) -> some View {
+        GeometryReader { proxy in
+            self.content.frame(width: proxy.frame(in: .local).size.height * multiplier)
+        }
+    }
+    
+    /// Pins heigth to superview's height
+    ///
+    /// - Parameter inset: Specifies the inset for screen height.
+    public func heightToSuperview(insetBy inset: CGFloat) -> some View {
+        GeometryReader { proxy in
+            self.content.frame(width: proxy.frame(in: .local).size.height - inset)
+        }
     }
     
     /// Aligns view to top.
