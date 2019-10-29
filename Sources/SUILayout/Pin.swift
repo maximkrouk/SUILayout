@@ -8,13 +8,18 @@
 
 import SwiftUI
 
+
 public extension View {
     var pin: Pin<Self> { Pin(self) }
 }
 
 public struct Pin<Content: View> {
     /// Screen bounds
+    #if os(iOS)
     private var screen = UIScreen.main.bounds
+    #elseif os(OSX)
+    private var screen = NSScreen.main!.frame
+    #endif
     
     private var content: Content
     public init(_ view: Content) { content = view }
